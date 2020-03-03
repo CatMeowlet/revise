@@ -1,6 +1,18 @@
-<?php
-include('../includes/layouts/user_layout_header.php');
-?>
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="http://localhost/revise/res/css/boostrap/bootstrap.min.css">
+
+	<title>iTutor</title>
+</head>
+
+<body>
 <div class="container mt-5">
 	<div class="row justify-content-center">
 		<div class="col-md-6">
@@ -36,7 +48,7 @@ include('../includes/layouts/user_layout_header.php');
 									<span class="form-check-label"> Tutor </span>
 								</label>
 								<label class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" name="type" value="parents">
+									<input class="form-check-input" type="radio" name="type" value="parent">
 									<span class="form-check-label"> Parent</span>
 								</label>
 							</div> <!-- form-group end.// -->
@@ -62,7 +74,11 @@ include('../includes/layouts/user_layout_header.php');
 		</div> <!-- col.//-->
 	</div> <!-- row.//-->
 </div>
-<!--container end.//-->
-<?php
-include('../includes/layouts/user_layout_footer.php');
-?>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="http://localhost/revise/res/js/jquery-3.2.1.slim.min.js"></script>
+<script src="http://localhost/revise/res/js/popper-1.12.9.js"></script>
+<script src="http://localhost/revise/res/js/bootstrap.min.js"></script>
+</body>
+
+</html>

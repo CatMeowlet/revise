@@ -12,7 +12,7 @@ if (isset($_POST['register'])) {
      $pass = $_POST['pass'];
      $status = "ACTIVE"; // default
      //SQL QUERY
-     $query = "INSERT INTO users (username,password,fname,lname,email,address,utype,ustatus)
+     $query = "INSERT INTO users (username,password,fname,lname,email,address,type,status)
      VALUES (?,?,?,?,?,?,?,?)";
 
      //PROTECT MYSQL INJECTION
