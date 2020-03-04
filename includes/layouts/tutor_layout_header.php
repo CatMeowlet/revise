@@ -25,10 +25,13 @@
         <div class="collapse navbar-collapse mt-2 ml-5" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php if( $current_page == "HOME"){echo "active";}else{echo "";} ?>">
-                    <a class="nav-link" href="http://localhost/revise/views/tutor/index.php"> <span class="custom-text">Profile</span> <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://localhost/revise/views/tutor/index.php"> <span class="custom-text">Schedule</span> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item <?php if( $current_page == "REQUEST"){echo "active";}else{echo "";} ?>">
                     <a class="nav-link" href="http://localhost/revise/views/tutor/request.php"> <span class="custom-text">Request</span> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item <?php if( $current_page == "PROFILE"){echo "active";}else{echo "";} ?>">
+                    <a class="nav-link" href="http://localhost/revise/views/tutor/profile.php"> <span class="custom-text">Profile</span> <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="nav navbar-nav justify-content-end">

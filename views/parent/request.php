@@ -38,8 +38,8 @@ header("Pragma: no-cache");
                                         echo '<tr>
                                     <td class="text-center">' . $row["subject"] . '</td>
                                     <td class="text-center">' . $row["days"] . '</td>
-                                    <td class="text-center">' . $row["q_startTime"] . '</td>
-                                    <td class="text-center">' . $row["q_endTime"] . '</td>
+                                    <td class="text-center">' . $row["u_req_startTime"] . '</td>
+                                    <td class="text-center">' . $row["u_req_endTime"] . '</td>
                                     <td class="text-center">' . $row["status"] . '</td>
                                     </tr>';
                                     }

@@ -2,7 +2,7 @@
 $current_page = "REQUEST";
 
 include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/utility/isAuth.php';
-include  $_SERVER['DOCUMENT_ROOT'] . '/revise/controller/services/tutor/__requestStatus.php';
+include  $_SERVER['DOCUMENT_ROOT'] . '/revise/controller/services/tutor/__displayRequest.php';
 // DEFAULT
 date_default_timezone_set("Asia/Manila");
 header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
@@ -15,7 +15,7 @@ header("Pragma: no-cache");
 <div class="container-fluid mt-5">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <form action="#" method="POST">
+            <form method="POST" action="../../controller/services/tutor/__acceptRequest.php">
                 <div class="table-responsive">
                     <table class="table table-dark">
                         <thead>
@@ -33,18 +33,38 @@ header("Pragma: no-cache");
                             </tr>
                         </thead>
                         <tbody>
+
                             <?php
                             if (isset($result)) {
                                 if (mysqli_num_rows($result) != 0) {
                                     while ($row = mysqli_fetch_array($result)) {
-                                        echo '<tr>
-                                    <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
-                                    <td class="text-center">' . $row["subject"] . '</td>
-                                    <td class="text-center">' . $row["days"] . '</td>
-                                    <td class="text-center">' . $row["u_req_startTime"] . '</td>
-                                    <td class="text-center">' . $row["u_req_endTime"] . '</td>
-                                    <td class="text-center">' . $row["status"] . '</td>
-                                    </tr>';
+                                        if ($row['status'] == "PENDING") {
+                                            echo '
+                                            <input type="hidden" name="parent_id" value="' . $row['uid'] . '">
+                                            <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
+                                            <tr>
+                                                 <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["subject"] . '</td>
+                                                 <td class="text-center">' . $row["days"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_startTime"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_endTime"] . '</td>
+                                                 <td class="text-center">' . $row["status"] . '</td>
+                                                 <td class="text-center"><input type="submit" name="acceptRequest" class="btn btn-primary" value="accept"> </td>
+                                            </tr>';
+                                        }else{
+                                            echo '
+                                            <input type="hidden" name="parent_id" value="' . $row['uid'] . '">
+                                            <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
+                                            <tr>
+                                                 <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["subject"] . '</td>
+                                                 <td class="text-center">' . $row["days"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_startTime"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_endTime"] . '</td>
+                                                 <td class="text-center">' . $row["status"] . '</td>
+                                                 <td class="text-center">Read-Only</td>
+                                            </tr>';               
+                                        }
                                     }
                                 } else {
                                     echo '<tr><td class="text-center" colspan="7"><p> Nothing Found!!</p></td></tr>';
