@@ -6,7 +6,7 @@ include  $_SERVER['DOCUMENT_ROOT'] . '/revise/controller/services/admin/__usersL
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="table-responsive">
-            <table class="table table-striped table-bordered" id="company_data" width="100%">
+            <table class="table table-dark" id="company_data" width="100%">
                 <thead>
                     <tr>
                         <th class="text-right">id</th>
@@ -18,14 +18,23 @@ include  $_SERVER['DOCUMENT_ROOT'] . '/revise/controller/services/admin/__usersL
                 <tbody>
                     <?php
                     while ($row = mysqli_fetch_array($result)) {
-                        echo '
-						<tr>
-						<td class="text-right">' . $row["uid"] . '</td>
-						<td class="text-center">' . $row["username"] . '</td>
-                        <td class="text-center">' . $row["status"] . '</td>
-                        <td class="text-center"><a href="http://localhost/revise/controller/services/admin/__usersDelete.php?uid=' . $row["uid"] . '&&type='.$row["type"].'">DELETE</td>
-						</tr>
-						';
+                        if ($row['type'] == "admin") {
+                            echo '<tr>
+                            <td class="text-right">' . $row["uid"] . '</td>
+                            <td class="text-center">' . $row["username"] . '</td>
+                            <td class="text-center">' . $row["status"] . '</td>
+                            <td class="text-center">Read Only</td>
+                            </tr>';
+                        } else {
+                            echo '
+                            <tr>
+                            <td class="text-right">' . $row["uid"] . '</td>
+                            <td class="text-center">' . $row["username"] . '</td>
+                            <td class="text-center">' . $row["status"] . '</td>
+                            <td class="text-center"><a href="http://localhost/revise/controller/services/admin/__usersDelete.php?uid=' . $row["uid"] . '&&type=' . $row["type"] . '">DELETE</td>
+                            </tr>
+                            ';
+                        }
                     } //end of while
                     ?>
                 </tbody>

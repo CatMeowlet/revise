@@ -9,12 +9,14 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="http://localhost/revise/res/css/boostrap/bootstrap.min.css">
 
+	<link rel="stylesheet" href="http://localhost/revise/res/css/custom.css">
+	<link rel="stylesheet" href="http://localhost/revise/res/css/fontawesome/all.css">
 	<title>iTutor</title>
 </head>
 
 <body>
-	<div class="container">
-		<div class="row justify-content-center">
+	<div class="container my-5">
+		<div class="row justify-content-center ">
 			<div class="col-md-6">
 				<div class="card mt-5">
 					<article class="card-body">
@@ -59,6 +61,7 @@
 	<script src="http://localhost/revise/res/js/jquery-3.2.1.slim.min.js"></script>
 	<script src="http://localhost/revise/res/js/popper-1.12.9.js"></script>
 	<script src="http://localhost/revise/res/js/bootstrap.min.js"></script>
+	<script defer src="http://localhost/revise/res/js/all.js"></script> 
 </body>
 
 </html>

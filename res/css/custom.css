@@ -1,0 +1,27 @@
+body{
+    background: url('http://localhost/revise/res/img/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#auth_body{
+    background-size: 100%;
+    background-position-y: -20px;
+}
+#custom-bg {
+    background-color: #10AC62 !important;
+}
+
+.img__logo {
+    height: 50px;
+    width: 140px;
+    /* display: inline; */
+    margin: 0 0 7px 0;
+}
+
+.custom-text {
+    font-size: 25px;
+}
+
+.active > a > .custom-text {
+    color: #fff;
+}

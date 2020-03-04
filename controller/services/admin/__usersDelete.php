@@ -6,7 +6,7 @@ if (isset($_SESSION['current_auth_type'], $_GET['uid'])) {
 
     //QUERY
     if ($type == "admin") {
-        header('location: http://localhost/revise/views/admin/index.php');
+        header('location: http://localhost/revise/views/admin/index.php?error=true');
     } else {
         $query = "DELETE FROM users WHERE uid = '$id' ";
         $result = mysqli_query($link, $query);

@@ -8,26 +8,32 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://localhost/revise/res/css/boostrap/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="http://localhost/revise/res/css/custom.css">
+    <link rel="stylesheet" href="http://localhost/revise/res/css/fontawesome/all.css">
 
     <title>iTutor</title>
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ml-5" href="#">iTutor</a>
+<body id="auth_body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="custom-bg">
+        <a class="navbar-brand ml-5" href="#"><img src="http://localhost/revise/res/img/logo.png" class="img__logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse mt-2 ml-5" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item <?php if( $current_page == "HOME"){echo "active";}else{echo "";} ?> ">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item <?php if( $current_page == "HOME"){echo "active";}else{echo "";} ?>">
+                    <a class="nav-link" href="http://localhost/revise/views/parent/index.php"> <span class="custom-text">Home</span> <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="http://localhost/revise/views/parent/index.php"> <span class="custom-text">Home</span> <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <ul class="nav navbar-nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link mr-10 ml-2 " href="http://localhost/revise/controller/services/users/__logout.php"><i class="fas fa-sign-out-alt"></i><strong>&nbsp Logout </strong></a>
+                    <a class="nav-link mr-5" href="http://localhost/revise/controller/services/users/__logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i><span class="custom-text">Logout</span></a>
                 </li>
             </ul>
         </div>
