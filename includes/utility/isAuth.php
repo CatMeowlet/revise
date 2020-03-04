@@ -17,4 +17,6 @@ if (isset($_SESSION['current_auth_type'])) {
             header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/login.php');
             break;
     }
+} else {
+    header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/login.php');
 }

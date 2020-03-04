@@ -24,10 +24,10 @@
         <div class="collapse navbar-collapse mt-2 ml-5" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item <?php if( $current_page == "HOME"){echo "active";}else{echo "";} ?>">
-                    <a class="nav-link" href="http://localhost/revise/views/parent/index.php"> <span class="custom-text">Home</span> <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://localhost/revise/views/admin/index.php"> <span class="custom-text">User</span> <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="http://localhost/revise/views/parent/index.php"> <span class="custom-text">Home</span> <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="http://localhost/revise/views/admin/index.php"> <span class="custom-text">Request</span> <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="nav navbar-nav justify-content-end">

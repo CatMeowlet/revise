@@ -1,7 +1,7 @@
 <?php
 $current_page = "HOME";
-include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/utility/isAuth.php';
 
+include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/utility/isAuth.php';
 // DEFAULT
 date_default_timezone_set("Asia/Manila");
 header("Expires: Tue, 01 Jan 2000 00:00:00 GMT");
@@ -18,7 +18,7 @@ header("Pragma: no-cache");
                 <form action="../../controller/services/parent/__findTutor.php" method="POST">
                     <div class="form-group">
                         <label for="findsubject">Find a Subject</label>
-                        <select class='form-control' name='subject' id="findsubject">
+                        <select class='form-control' name='subject' id="findsubject" required>
                             <option>Select Subject</option>
                             <option value='English'>English</option>
                             <option value='Filipino'>Filipino</option>
