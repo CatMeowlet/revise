@@ -8,10 +8,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="http://localhost/revise/res/css/boostrap/bootstrap.min.css">
-    
     <link rel="stylesheet" href="http://localhost/revise/res/css/custom.css">
     <link rel="stylesheet" href="http://localhost/revise/res/css/fontawesome/all.css">
-
+    <link rel="stylesheet" href="http://localhost/revise/res/css/alertify.css">
     <title>iTutor</title>
 </head>
 
