@@ -8,7 +8,7 @@ if (isset($_SESSION['current_auth_type'])) {
             include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/layouts/admin_layout_header.php';
             break;
         case "tutor":
-            include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/layouts/user_layout_header.php';
+            include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/layouts/tutor_layout_header.php';
             break;
         case "parent":
             include  $_SERVER['DOCUMENT_ROOT'] . '/revise/includes/layouts/user_layout_header.php';

@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
     $pass = $_POST['pass'];
     $status = "ACTIVE";
 
-    $query = "SELECT username, type, status FROM users WHERE username = ? AND password = ? AND status = ? ";
+    $query = "SELECT uid, username, type, status FROM users WHERE username = ? AND password = ? AND status = ? ";
 
     //PROTECT MYSQL INJECTION
     $stmt = $link->prepare($query);
@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
     //EXECUTE PREPARED STATEMENT
     $stmt->execute();
     //BIND RESULT VARIABLES
-    $stmt->bind_result($u_name, $u_type, $u_status);
+    $stmt->bind_result($u_id,$u_name, $u_type, $u_status);
     //STORE RESULT
     $stmt->store_result();
     //FETCH RESULT
