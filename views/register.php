@@ -28,42 +28,42 @@
 							<div class="form-row">
 								<div class="col form-group">
 									<label>First name </label>
-									<input type="text" class="form-control" placeholder="First Name" name="fname">
+									<input type="text" class="form-control" placeholder="First Name" name="fname" required>
 								</div> <!-- form-group end.// -->
 								<div class="col form-group">
 									<label>Last name</label>
-									<input type="text" class="form-control" placeholder="Last Name" name="lname">
+									<input type="text" class="form-control" placeholder="Last Name" name="lname"required>
 								</div> <!-- form-group end.// -->
 							</div> <!-- form-row end.// -->
 							<div class="form-group">
 								<label>Username</label>
-								<input type="text" class="form-control" placeholder="" name="user">
+								<input type="text" class="form-control" placeholder="" name="user" required>
 								<small class="form-text text-muted">Use for login.</small>
 								<div class="form-group">
 									<label>Email address</label>
-									<input type="email" class="form-control" placeholder="" name="email">
+									<input type="email" class="form-control" placeholder="" name="email" required>
 									<small class="form-text text-muted">We'll never share your email with anyone else.</small>
 								</div> <!-- form-group end.// -->
 								<div class="form-group">
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="type" value="tutor" checked="true">
+										<input class="form-check-input" type="radio" name="type" value="tutor" checked="true" >
 										<span class="form-check-label"> Tutor </span>
 									</label>
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="type" value="parent">
+										<input class="form-check-input" type="radio" name="type" value="parent" >
 										<span class="form-check-label"> Parent</span>
 									</label>
 								</div> <!-- form-group end.// -->
 								<div class="form-row">
 									<div class="form-group col-md-12">
 										<label>Address</label>
-										<input type="text" class="form-control" name="address">
+										<input type="text" class="form-control" name="address" required>
 									</div> <!-- form-group end.// -->
 
 								</div> <!-- form-row.// -->
 								<div class="form-group">
 									<label>Create password</label>
-									<input class="form-control" type="password" name="pass">
+									<input class="form-control" type="password" name="pass" required>
 								</div> <!-- form-group end.// -->
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary btn-block" name="register"> Register </button>
