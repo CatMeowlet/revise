@@ -27,6 +27,7 @@ header("Pragma: no-cache");
                                 <th class="text-center">Days</th>
                                 <th class="text-center">Starting Time</th>
                                 <th class="text-center">End Time</th>
+                                <th class="text-center">Status</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
@@ -41,6 +42,7 @@ header("Pragma: no-cache");
                                     <td class="text-center">' . $row["u_req_startTime"] . '</td>
                                     <td class="text-center">' . $row["u_req_endTime"] . '</td>
                                     <td class="text-center">' . $row["status"] . '</td>
+                                    <td class="text-center"><button type="button" class="btn btn-danger runDelete" id="runDelete" data-id="' . $row["q_id"] . '">Cancel</button> </td>
                                     </tr>';
                                     }
                                 } else {
@@ -61,3 +63,25 @@ header("Pragma: no-cache");
 <?php
 include('../../includes/layouts/user_layout_footer.php');
 ?>
+<!-- runDelete -->
+<script type='text/javascript'>
+    $(function() {
+        $('.runDelete').click(function(event) {
+            // get the id you want to act on
+            var ids = $(this).data("id");
+            // ask user for confirmation
+            alertify.confirm('Are you sure you want to continue?',
+                // accepted
+                function() {
+                    // go to the processing page
+                    // window.location = '/itutor/accept.php?rid=' + theId;
+                    window.location = 'http://localhost/revise/controller/services/parent/__cancelRequest.php?q_id=' + ids ;
+                    alertify.success('Delete Successful');
+                },
+                // declined
+                function() {
+                    alertify.error('Action Canceled');
+                }).set('closable', false);
+        });
+    });
+</script>
