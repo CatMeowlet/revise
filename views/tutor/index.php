@@ -93,7 +93,7 @@ header("Pragma: no-cache");
                                 <td class="text-center">' . $row["days"] . '</td>
                                 <td class="text-center">' . $row["q_startTime"] . '</td>
                                 <td class="text-center">' . $row["q_endTime"] . '</td>
-                                <td class="text-center">Read Only</td>
+                                <td class="text-center"><button type="button" class="btn btn-danger runDelete" id="runDelete" data-id="' . $row["q_id"] . ' , ' . $row["u_id"] . '">Delete</button> </td>
                                 </tr>';
                             }
                         } else {
@@ -111,3 +111,27 @@ header("Pragma: no-cache");
 <?php
 include('../../includes/layouts/tutor_layout_footer.php');
 ?>
+<!-- runDelete -->
+<script type='text/javascript'>
+    $(function() {
+        $('.runDelete').click(function(event) {
+            // get the id you want to act on
+            var ids = $(this).data("id");
+            var arr = ids.split(' , ');
+            console.log(arr);
+            // ask user for confirmation
+            alertify.confirm('Are you sure you want to continue?',
+                // accepted
+                function() {
+                    // go to the processing page
+                    // window.location = '/itutor/accept.php?rid=' + theId;
+                    window.location = 'http://localhost/revise/controller/services/tutor/__scheduleDelete.php?qid=' + arr[0] + '&&uid=' + arr[1];
+                    alertify.success('Delete Successful');
+                },
+                // declined
+                function() {
+                    alertify.error('Action Canceled');
+                }).set('closable', false);
+        });
+    });
+</script>
