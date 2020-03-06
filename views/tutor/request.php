@@ -49,9 +49,9 @@ header("Pragma: no-cache");
                                                  <td class="text-center">' . $row["u_req_startTime"] . '</td>
                                                  <td class="text-center">' . $row["u_req_endTime"] . '</td>
                                                  <td class="text-center">' . $row["status"] . '</td>
-                                                 <td class="text-center"><input type="submit" name="acceptRequest" class="btn btn-primary" value="accept"> </td>
+                                                 <td class="text-center"><input type="submit" name="acceptRequest" class="btn btn-primary" value="accept">  <input type="submit" name="declineRequest" class="btn btn-primary" value="decline"></td>
                                             </tr>';
-                                        }else{
+                                        } elseif ($row['status'] == "APPROVED") {
                                             echo '
                                             <input type="hidden" name="parent_id" value="' . $row['uid'] . '">
                                             <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
@@ -62,8 +62,21 @@ header("Pragma: no-cache");
                                                  <td class="text-center">' . $row["u_req_startTime"] . '</td>
                                                  <td class="text-center">' . $row["u_req_endTime"] . '</td>
                                                  <td class="text-center">' . $row["status"] . '</td>
-                                                 <td class="text-center">Read-Only</td>
-                                            </tr>';               
+                                                 <td class="text-center"> <input type="submit" name="cancelRequest" class="btn btn-danger" value="cancel"></td>
+                                            </tr>';
+                                        } else {
+                                            echo '
+                                            <input type="hidden" name="parent_id" value="' . $row['uid'] . '">
+                                            <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
+                                            <tr>
+                                                 <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["subject"] . '</td>
+                                                 <td class="text-center">' . $row["days"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_startTime"] . '</td>
+                                                 <td class="text-center">' . $row["u_req_endTime"] . '</td>
+                                                 <td class="text-center">' . $row["status"] . '</td>
+                                                 <td class="text-center">  READ-ONLY</td>
+                                            </tr>';
                                         }
                                     }
                                 } else {
@@ -75,6 +88,31 @@ header("Pragma: no-cache");
                             ?>
                         </tbody>
                     </table>
+                    <!-- Pagination -->
+
+
+                    <ul class="pagination justify-content-center mb-4">
+                        <li class="page-item"><a href="?pageno=1" class="page-link">First</a></li>
+                        <li class="<?php if ($pageno <= 1) {
+                                        echo 'disabled';
+                                    } ?> page-item">
+                            <a href="<?php if ($pageno <= 1) {
+                                            echo '#';
+                                        } else {
+                                            echo "?pageno=" . ($pageno - 1);
+                                        } ?>" class="page-link">Prev</a>
+                        </li>
+                        <li class="<?php if ($pageno >= $total_pages) {
+                                        echo 'disabled';
+                                    } ?> page-item">
+                            <a href="<?php if ($pageno >= $total_pages) {
+                                            echo '#';
+                                        } else {
+                                            echo "?pageno=" . ($pageno + 1);
+                                        } ?> " class="page-link">Next</a>
+                        </li>
+                        <li class="page-item"><a href="?pageno=<?php echo $total_pages; ?>" class="page-link">Last</a></li>
+                    </ul>
                 </div>
             </form>
         </div>
