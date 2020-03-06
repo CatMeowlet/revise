@@ -20,7 +20,7 @@ header("Pragma: no-cache");
                     <table class="table table-dark">
                         <thead>
                             <tr>
-                                <th class="text-center" colspan="5">Search Result</th>
+                                <th class="text-center" colspan="6">Search Result</th>
                             </tr>
                             <tr>
                                 <th class="text-center">Subject</th>

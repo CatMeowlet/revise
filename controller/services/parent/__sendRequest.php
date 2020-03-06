@@ -23,14 +23,22 @@ if (isset($_GET['q_id'])) {
     $stmt->fetch();
 
     if (isset($q_startTime)) {
-        $query_req = "INSERT INTO request (q_id, p_id, u_req_startTime,u_req_endTime, status)
-        VALUES ('$q_id','$u_id','$q_startTime','$q_endTime','$status')";
-        $req_result = mysqli_query($link, $query_req);
+        //search for duplicate sent req
+        $query = "SELECT * FROM request WHERE q_id = '$q_id' AND p_id = '$u_id'";
+        $resultDuplicate = mysqli_query($link, $query);
+        
+        if (mysqli_num_rows($resultDuplicate) == 0) {
+            $query_req = "INSERT INTO request (q_id, p_id, u_req_startTime,u_req_endTime, status)
+            VALUES ('$q_id','$u_id','$q_startTime','$q_endTime','$status')";
+            $req_result = mysqli_query($link, $query_req);
 
-        if ($req_result) {
-            header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?send=true');
+            if ($req_result) {
+                header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?send=true');
+            } else {
+                header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?send=false');
+            }
         } else {
-            header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?send=false');
+            header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?err=Duplicate');
         }
     } else {
         header('location: http://' . $_SERVER['HTTP_HOST'] . '/revise/views/parent/index.php?send=false');

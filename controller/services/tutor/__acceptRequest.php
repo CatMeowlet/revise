@@ -9,7 +9,7 @@ if (isset($_POST['acceptRequest'])) {
 
 
     //update qualified(tutor)
-    $sql = "UPDATE qualified SET p_id = '$parent_id' WHERE u_id = '$tutor_id' AND q_id = '$q_id' ";
+    $sql = "UPDATE qualified SET p_id = '$parent_id' status = 'ACCEPTED' WHERE  u_id = '$tutor_id' AND q_id = '$q_id' ";
     $res_u_qualified = mysqli_query($link, $sql);
 
     if ($res_u_qualified) {

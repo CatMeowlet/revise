@@ -13,7 +13,7 @@ if (isset($_POST['findTutor'])) {
     //SELECT * FROM `qualified` WHERE q_startTime >= "12:00" AND q_endTime <= "15:00" AND subject = "English"
 
     //request
-    $query_for_matching ="SELECT * FROM qualified WHERE q_startTime <= '$start_time' AND q_endTime >= '$end_time' AND subject = '$subject' ";
+    $query_for_matching ="SELECT * FROM qualified WHERE q_startTime <= '$start_time' AND q_endTime >= '$end_time' AND subject = '$subject' AND status = 'AVAILABLE' ";
     #$link = mysqli_connect("localhost","root", "", "itutorRevise");
     $result = mysqli_query($link, $query_for_matching);
  }
