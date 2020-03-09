@@ -74,13 +74,14 @@ header("Pragma: no-cache");
                 <table class="table table-dark">
                     <thead>
                         <tr>
-                            <th class="text-center" colspan="5">Created Schedule</th>
+                            <th class="text-center" colspan="6">Created Schedule</th>
                         </tr>
                         <tr>
                             <th class="text-right">Subject</th>
                             <th class="text-center">Days</th>
                             <th class="text-center">Starting Time</th>
                             <th class="text-center">End Time</th>
+                            <th class="text-center">Status</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -93,6 +94,7 @@ header("Pragma: no-cache");
                                 <td class="text-center">' . $row["days"] . '</td>
                                 <td class="text-center">' . $row["q_startTime"] . '</td>
                                 <td class="text-center">' . $row["q_endTime"] . '</td>
+                                <td class="text-center">' . $row["status"] . '</td>
                                 <td class="text-center"><button type="button" class="btn btn-danger runDelete" id="runDelete" data-id="' . $row["q_id"] . ' , ' . $row["u_id"] . '">Delete</button> </td>
                                 </tr>';
                             }

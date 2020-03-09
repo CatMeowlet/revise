@@ -17,7 +17,7 @@ if (isset($_POST['acceptRequest'])) {
         $res_u_request = mysqli_query($link, $sql_u_request);
    
         if ($res_u_request) {
-            header('location: http://localhost/revise/views/tutor/request.php?update=true');
+            header('location: http://localhost/revise/views/tutor/request.php?update=true'); 
         } else {
 
            header('location: http://localhost/revise/views/tutor/request.php?update=failed');
