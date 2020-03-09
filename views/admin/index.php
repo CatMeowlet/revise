@@ -204,7 +204,7 @@ include('../../includes/layouts/admin_layout_footer.php');
                 function() {
                     // go to the processing page
                     // window.location = '/itutor/accept.php?rid=' + theId;
-                    window.location = 'http://localhost/revise/controller/services/admin/__usersReactivate.php?uid=' + arr[0] + '&&type=' + arr[1];
+                    window.location = 'http://localhost/revise/controller/services/admin/__usersActivate.php?uid=' + arr[0] + '&&type=' + arr[1];
                     alertify.success('Delete Successful');
                 },
                 // declined
