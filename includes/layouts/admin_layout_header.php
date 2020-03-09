@@ -26,8 +26,8 @@
                 <li class="nav-item <?php if( $current_page == "HOME"){echo "active";}else{echo "";} ?>">
                     <a class="nav-link" href="http://localhost/revise/views/admin/index.php"> <span class="custom-text">User</span> <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="http://localhost/revise/views/admin/index.php"> <span class="custom-text">Request</span> <span class="sr-only">(current)</span></a>
+                <li class="nav-item <?php if( $current_page == "REQUEST"){echo "active";}else{echo "";} ?>">
+                    <a class="nav-link" href="http://localhost/revise/views/admin/request.php"> <span class="custom-text">Request</span> <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="nav navbar-nav justify-content-end">
