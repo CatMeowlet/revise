@@ -10,6 +10,7 @@ if (isset($_POST['register'])) {
      $type = $_POST['type'];
      $address = trim($_POST['address']);
      $pass = trim($_POST['pass']);
+     $contact = trim($_POST['contact']);
      $status = "ACTIVE"; // default
      console_log("check" . $fname . "space");
 
@@ -22,12 +23,12 @@ if (isset($_POST['register'])) {
           console_log($CheckUser_sql);
           if (mysqli_num_rows($resultCheck) == 0) {
                //SQL QUERY
-               $query = "INSERT INTO users (username,password,fname,lname,email,address,type,status)
-                          VALUES (?,?,?,?,?,?,?,?)";
+               $query = "INSERT INTO users (username,password,fname,lname,email,contact,address,type,status)
+                          VALUES (?,?,?,?,?,?,?,?,?)";
                //PROTECT MYSQL INJECTION
                $stmt = $link->prepare($query);
                //BIND PARAM
-               $stmt->bind_param("ssssssss", $user, $pass, $fname, $lname, $email, $address, $type, $status);
+               $stmt->bind_param("sssssssss", $user, $pass, $fname, $lname, $email,$contact, $address, $type, $status);
                //EXECUTE PREPARED STATEMENT
                $res = $stmt->execute();
                //CLOSE STATEMENT AND CONNECTION

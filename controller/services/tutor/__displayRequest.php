@@ -19,9 +19,9 @@ if (isset($_SESSION['current_auth_id'])) {
     $total_pages = ceil($total_rows / $no_of_records_per_page);
 
     //QUERY
-    $query = "SELECT users.uid, users.fname,users.lname, request.q_id, request.u_req_startTime,
+    $query = "SELECT users.uid,users.contact, users.fname,users.lname, request.q_id, request.u_req_startTime,
     request.u_req_endTime, request.status, qualified.subject, qualified.days 
     FROM users, request, qualified WHERE users.uid = request.p_id AND qualified.q_id = request.q_id AND qualified.u_id = '$u_id'  LIMIT $offset, $no_of_records_per_page";
     $result = mysqli_query($link, $query);
-    console_log($result);
+    console_log($query);
 }

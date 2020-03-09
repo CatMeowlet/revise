@@ -24,6 +24,7 @@ header("Pragma: no-cache");
                             </tr>
                             <tr>
                                 <th class="text-center">Parent Name</th>
+                                <th class="text-center">Contact</th>
                                 <th class="text-center">Requested Subject</th>
                                 <th class="text-center">Days</th>
                                 <th class="text-center">Starting Time</th>
@@ -44,6 +45,7 @@ header("Pragma: no-cache");
                                             <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
                                             <tr>
                                                  <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["contact"] . '</td>
                                                  <td class="text-center">' . $row["subject"] . '</td>
                                                  <td class="text-center">' . $row["days"] . '</td>
                                                  <td class="text-center">' . $row["u_req_startTime"] . '</td>
@@ -57,6 +59,7 @@ header("Pragma: no-cache");
                                             <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
                                             <tr>
                                                  <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["contact"] . '</td>
                                                  <td class="text-center">' . $row["subject"] . '</td>
                                                  <td class="text-center">' . $row["days"] . '</td>
                                                  <td class="text-center">' . $row["u_req_startTime"] . '</td>
@@ -70,6 +73,7 @@ header("Pragma: no-cache");
                                             <input type="hidden" name="q_id" value="' . $row['q_id'] . '">
                                             <tr>
                                                  <td class="text-center">' . $row["fname"] . '  '  . $row["lname"] . '</td>
+                                                 <td class="text-center">' . $row["contact"] . '</td>
                                                  <td class="text-center">' . $row["subject"] . '</td>
                                                  <td class="text-center">' . $row["days"] . '</td>
                                                  <td class="text-center">' . $row["u_req_startTime"] . '</td>

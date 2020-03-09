@@ -24,7 +24,7 @@
 						<h4 class="card-title mt-2">Sign up</h4>
 					</header>
 					<article class="card-body">
-						<form action="../controller/services/users/__register.php" method="POST">
+						<form action="../controller/services/users/__register.php" method="POST" oninput='retype.setCustomValidity(retype.value != pass.value ? "Passwords do not match." : "") ' >
 							<div class="form-row">
 								<div class="col form-group">
 									<label>First name </label>
@@ -32,7 +32,7 @@
 								</div> <!-- form-group end.// -->
 								<div class="col form-group">
 									<label>Last name</label>
-									<input type="text" class="form-control" placeholder="Last Name" name="lname"required>
+									<input type="text" class="form-control" placeholder="Last Name" name="lname" required>
 								</div> <!-- form-group end.// -->
 							</div> <!-- form-row end.// -->
 							<div class="form-group">
@@ -46,11 +46,11 @@
 								</div> <!-- form-group end.// -->
 								<div class="form-group">
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="type" value="tutor" checked="true" >
+										<input class="form-check-input" type="radio" name="type" value="tutor" checked="true">
 										<span class="form-check-label"> Tutor </span>
 									</label>
 									<label class="form-check form-check-inline">
-										<input class="form-check-input" type="radio" name="type" value="parent" >
+										<input class="form-check-input" type="radio" name="type" value="parent">
 										<span class="form-check-label"> Parent</span>
 									</label>
 								</div> <!-- form-group end.// -->
@@ -59,11 +59,21 @@
 										<label>Address</label>
 										<input type="text" class="form-control" name="address" required>
 									</div> <!-- form-group end.// -->
-
 								</div> <!-- form-row.// -->
-								<div class="form-group">
-									<label>Create password</label>
-									<input class="form-control" type="password" name="pass" required>
+								<div class="form-row">
+									<div class="form-group col-md-12">
+										<label>Contact</label>
+										<input type="text" class="form-control" name="contact" required>
+									</div> <!-- form-group end.// -->
+								</div> <!-- form-row.// -->
+								<div class="form-row">
+									<div class="col form-group">
+										<label>Create password</label>
+										<input class="form-control" type="password" name="pass" required>
+									</div>
+									<div class="col form-group">
+										<label>Confirm password</label>
+										<input class="form-control" type="password" name="retype" required></div>
 								</div> <!-- form-group end.// -->
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary btn-block" name="register"> Register </button>
