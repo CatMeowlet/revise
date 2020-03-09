@@ -24,7 +24,7 @@
 						<h4 class="card-title mt-2">Sign up</h4>
 					</header>
 					<article class="card-body">
-						<form action="../controller/services/users/__register.php" method="POST" oninput='retype.setCustomValidity(retype.value != pass.value ? "Passwords do not match." : "") ' >
+						<form action="../controller/services/users/__register.php" method="POST" oninput='retype.setCustomValidity(retype.value != pass.value ? "Passwords do not match." : "") '>
 							<div class="form-row">
 								<div class="col form-group">
 									<label>First name </label>
@@ -63,7 +63,7 @@
 								<div class="form-row">
 									<div class="form-group col-md-12">
 										<label>Contact</label>
-										<input type="text" class="form-control" name="contact" required>
+										<input type="text" class="form-control"  onkeypress="return isNumberKey(event)"  name="contact" required>
 									</div> <!-- form-group end.// -->
 								</div> <!-- form-row.// -->
 								<div class="form-row">
@@ -95,3 +95,13 @@
 </body>
 
 </html>
+<script>
+	function isNumberKey(evt) {
+		var charCode = (evt.which) ? evt.which : evt.keyCode;
+		if (charCode != 46 && charCode > 31 &&
+			(charCode < 48 || charCode > 57))
+			return false;
+
+		return true;
+	}
+</script>
